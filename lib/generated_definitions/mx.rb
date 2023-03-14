@@ -7,48 +7,160 @@ module Holidays
   # All the definitions are available at https://github.com/holidays/holidays
   module MX # :nodoc:
     def self.defined_regions
-      [:mx, :mx_pue, :us, :ca]
+      %i[mx mx_pue us ca]
     end
 
     def self.holidays_by_month
       {
-                1 => [{:mday => 1, :name => "Año nuevo", :regions => [:mx]},
-            {:mday => 6, :type => :informal, :name => "Dia de los Santos Reyes", :regions => [:mx]}],
-      2 => [{:wday => 1, :week => 1, :name => "Día de la Constitución", :regions => [:mx]},
-            {:mday => 2, :type => :informal, :name => "Groundhog Day", :regions => [:us, :ca]},
-            {:mday => 14, :type => :informal, :name => "Valentine's Day", :regions => [:us, :ca]}],
-      3 => [{:wday => 1, :week => 3, :name => "Natalicio de Benito Juárez", :regions => [:mx]},
-            {:mday => 17, :type => :informal, :name => "St. Patrick's Day", :regions => [:us, :ca]}],
-      4 => [{:mday => 30, :type => :informal, :name => "Día del Niño", :regions => [:mx]},
-            {:mday => 1, :type => :informal, :name => "April Fool's Day", :regions => [:us, :ca]},
-            {:mday => 22, :type => :informal, :name => "Earth Day", :regions => [:us, :ca]}],
-      5 => [{:mday => 1, :name => "Día del Trabajo", :regions => [:mx]},
-            {:mday => 5, :type => :informal, :name => "Cinco de Mayo", :regions => [:mx]},
-            {:mday => 5, :type => :informal, :name => "La Batalla de Puebla", :regions => [:mx_pue]},
-            {:mday => 10, :type => :informal, :name => "Día de la Madre", :regions => [:mx]},
-            {:mday => 15, :type => :informal, :name => "Día del Maestro", :regions => [:mx]},
-            {:wday => 0, :week => 2, :type => :informal, :name => "Mother's Day", :regions => [:us, :ca]},
-            {:wday => 6, :week => 3, :type => :informal, :name => "Armed Forces Day", :regions => [:us]}],
-      6 => [{:wday => 0, :week => 3, :type => :informal, :name => "Día del Padre", :regions => [:mx]},
-            {:wday => 0, :week => 3, :type => :informal, :name => "Father's Day", :regions => [:us, :ca]}],
-      9 => [{:mday => 15, :type => :informal, :name => "Grito de Dolores", :regions => [:mx]},
-            {:mday => 16, :name => "Día de la Independencia", :regions => [:mx]}],
-      10 => [{:mday => 12, :type => :informal, :name => "Día de la Raza", :regions => [:mx]},
-            {:mday => 31, :type => :informal, :name => "Halloween", :regions => [:us, :ca]}],
-      11 => [{:mday => 1, :type => :informal, :name => "Todos los Santos", :regions => [:mx]},
-            {:mday => 2, :type => :informal, :name => "Los Fieles Difuntos", :regions => [:mx]},
-            {:wday => 1, :week => 3, :name => "Día de la Revolución", :regions => [:mx]}],
-      12 => [{:mday => 12, :type => :informal, :name => "Día de la Virgen de Guadalupe", :regions => [:mx]},
-            {:mday => 24, :type => :informal, :name => "Nochebuena", :regions => [:mx]},
-            {:mday => 25, :name => "Navidad", :regions => [:mx]},
-            {:mday => 28, :type => :informal, :name => "Los Santos Inocentes", :regions => [:mx]}]
+        1 => [
+          { mday: 1, name: "Año nuevo", regions: [:mx] },
+          {
+            mday: 6,
+            type: :informal,
+            name: "Dia de los Santos Reyes",
+            regions: [:mx]
+          }
+        ],
+        2 => [
+          { wday: 1, week: 1, name: "Día de la Constitución", regions: [:mx] },
+          {
+            mday: 2,
+            type: :informal,
+            name: "Groundhog Day",
+            regions: %i[us ca]
+          },
+          {
+            mday: 14,
+            type: :informal,
+            name: "Valentine's Day",
+            regions: %i[us ca]
+          }
+        ],
+        3 => [
+          {
+            wday: 1,
+            week: 3,
+            name: "Natalicio de Benito Juárez",
+            regions: [:mx]
+          },
+          {
+            mday: 17,
+            type: :informal,
+            name: "St. Patrick's Day",
+            regions: %i[us ca]
+          }
+        ],
+        4 => [
+          { mday: 30, type: :informal, name: "Día del Niño", regions: [:mx] },
+          {
+            mday: 1,
+            type: :informal,
+            name: "April Fool's Day",
+            regions: %i[us ca]
+          },
+          { mday: 22, type: :informal, name: "Earth Day", regions: %i[us ca] }
+        ],
+        5 => [
+          { mday: 1, name: "Día del Trabajo", regions: [:mx] },
+          { mday: 5, type: :informal, name: "Cinco de Mayo", regions: [:mx] },
+          {
+            mday: 5,
+            type: :informal,
+            name: "La Batalla de Puebla",
+            regions: [:mx_pue]
+          },
+          {
+            mday: 10,
+            type: :informal,
+            name: "Día de la Madre",
+            regions: [:mx]
+          },
+          {
+            mday: 15,
+            type: :informal,
+            name: "Día del Maestro",
+            regions: [:mx]
+          },
+          {
+            wday: 0,
+            week: 2,
+            type: :informal,
+            name: "Mother's Day",
+            regions: %i[us ca]
+          },
+          {
+            wday: 6,
+            week: 3,
+            type: :informal,
+            name: "Armed Forces Day",
+            regions: [:us]
+          }
+        ],
+        6 => [
+          {
+            wday: 0,
+            week: 3,
+            type: :informal,
+            name: "Día del Padre",
+            regions: [:mx]
+          },
+          {
+            wday: 0,
+            week: 3,
+            type: :informal,
+            name: "Father's Day",
+            regions: %i[us ca]
+          }
+        ],
+        9 => [
+          {
+            mday: 15,
+            type: :informal,
+            name: "Grito de Dolores",
+            regions: [:mx]
+          },
+          { mday: 16, name: "Día de la Independencia", regions: [:mx] }
+        ],
+        10 => [
+          { mday: 12, type: :informal, name: "Día de la Raza", regions: [:mx] },
+          { mday: 31, type: :informal, name: "Halloween", regions: %i[us ca] }
+        ],
+        11 => [
+          {
+            mday: 1,
+            type: :informal,
+            name: "Todos los Santos",
+            regions: [:mx]
+          },
+          {
+            mday: 2,
+            type: :informal,
+            name: "Los Fieles Difuntos",
+            regions: [:mx]
+          },
+          { wday: 1, week: 3, name: "Día de la Revolución", regions: [:mx] }
+        ],
+        12 => [
+          {
+            mday: 12,
+            type: :informal,
+            name: "Día de la Virgen de Guadalupe",
+            regions: [:mx]
+          },
+          { mday: 24, type: :informal, name: "Nochebuena", regions: [:mx] },
+          { mday: 25, name: "Navidad", regions: [:mx] },
+          {
+            mday: 28,
+            type: :informal,
+            name: "Los Santos Inocentes",
+            regions: [:mx]
+          }
+        ]
       }
     end
 
     def self.custom_methods
-      {
-          
-      }
+      {}
     end
   end
 end

@@ -12,21 +12,31 @@ module Holidays
 
     def self.holidays_by_month
       {
-                1 => [{:mday => 1, :name => "Jour de l'an", :regions => [:tn]},
-            {:mday => 14, :name => "Fête de la Révolution et de la Jeunesse", :regions => [:tn]}],
-      3 => [{:mday => 20, :name => "Fête de l'Indépendance", :regions => [:tn]}],
-      4 => [{:mday => 9, :name => "Journée des Martyrs", :regions => [:tn]}],
-      5 => [{:mday => 1, :name => "Fête du travail", :regions => [:tn]}],
-      7 => [{:mday => 25, :name => "Fête de la République", :regions => [:tn]}],
-      8 => [{:mday => 13, :name => "Fête de la Femme et de la Famille", :regions => [:tn]}],
-      10 => [{:mday => 15, :name => "Fête de l'Évacuation", :regions => [:tn]}]
+        1 => [
+          { mday: 1, name: "Jour de l'an", regions: [:tn] },
+          {
+            mday: 14,
+            name: "Fête de la Révolution et de la Jeunesse",
+            regions: [:tn]
+          }
+        ],
+        3 => [{ mday: 20, name: "Fête de l'Indépendance", regions: [:tn] }],
+        4 => [{ mday: 9, name: "Journée des Martyrs", regions: [:tn] }],
+        5 => [{ mday: 1, name: "Fête du travail", regions: [:tn] }],
+        7 => [{ mday: 25, name: "Fête de la République", regions: [:tn] }],
+        8 => [
+          {
+            mday: 13,
+            name: "Fête de la Femme et de la Famille",
+            regions: [:tn]
+          }
+        ],
+        10 => [{ mday: 15, name: "Fête de l'Évacuation", regions: [:tn] }]
       }
     end
 
     def self.custom_methods
-      {
-          
-      }
+      {}
     end
   end
 end

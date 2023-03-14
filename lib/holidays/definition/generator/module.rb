@@ -1,3 +1,4 @@
+require 'syntax_tree'
 require 'holidays/errors'
 
 module Holidays
@@ -46,6 +47,8 @@ module Holidays
 end
           EOM
 
+          SyntaxTree.format(module_src)
+        rescue SyntaxTree::Parser::ParseError
           module_src
         end
       end

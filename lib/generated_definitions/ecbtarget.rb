@@ -12,19 +12,33 @@ module Holidays
 
     def self.holidays_by_month
       {
-                0 => [{:function => "easter(year)", :function_arguments => [:year], :function_modifier => -2, :name => "Good Friday", :regions => [:ecbtarget]},
-            {:function => "easter(year)", :function_arguments => [:year], :function_modifier => 1, :name => "Easter Monday", :regions => [:ecbtarget]}],
-      1 => [{:mday => 1, :name => "New Year's Day", :regions => [:ecbtarget]}],
-      5 => [{:mday => 1, :name => "Labour Day", :regions => [:ecbtarget]}],
-      12 => [{:mday => 25, :name => "Christmas Day", :regions => [:ecbtarget]},
-            {:mday => 26, :name => "Christmas Holiday", :regions => [:ecbtarget]}]
+        0 => [
+          {
+            function: "easter(year)",
+            function_arguments: [:year],
+            function_modifier: -2,
+            name: "Good Friday",
+            regions: [:ecbtarget]
+          },
+          {
+            function: "easter(year)",
+            function_arguments: [:year],
+            function_modifier: 1,
+            name: "Easter Monday",
+            regions: [:ecbtarget]
+          }
+        ],
+        1 => [{ mday: 1, name: "New Year's Day", regions: [:ecbtarget] }],
+        5 => [{ mday: 1, name: "Labour Day", regions: [:ecbtarget] }],
+        12 => [
+          { mday: 25, name: "Christmas Day", regions: [:ecbtarget] },
+          { mday: 26, name: "Christmas Holiday", regions: [:ecbtarget] }
+        ]
       }
     end
 
     def self.custom_methods
-      {
-          
-      }
+      {}
     end
   end
 end
